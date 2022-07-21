@@ -1,10 +1,9 @@
-create sequence bookmark_sequence start with 1 increment by 50;
+CREATE SEQUENCE bookmark_sequence START WITH 1 INCREMENT BY 50;
 
-create table bookmarks (
-    id bigint default nextval('bookmark_sequence') not null,
-    created_at timestamp,
-    title varchar(255) not null,
-    url varchar(255) not null,
-    primary key (id)
+CREATE TABLE bookmarks (
+    id bigint DEFAULT nextval('bookmark_sequence') NOT NULL,
+    created_at TIMESTAMP,
+    title VARCHAR(255) NOT NULL,
+    url VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
 );
-
