@@ -15,10 +15,10 @@ public class BookmarkService {
 
     private final BookmarkRepository bookmarkRepository;
 
-    public BookmarkDTO getBookmarks(Integer page) {
+    public BookmarksDTO getBookmarks(Integer page) {
         int pageNumber = page < 1 ? 0 : page - 1;
         Pageable pageable = PageRequest.of(pageNumber, 10, Sort.Direction.DESC, "createdAt");
 
-        return new BookmarkDTO(bookmarkRepository.findAll(pageable));
+        return new BookmarksDTO(bookmarkRepository.findAll(pageable));
     }
 }
