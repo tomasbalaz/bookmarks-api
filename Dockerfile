@@ -4,6 +4,10 @@
 #./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=balaztomas85/bookmarks-api
 #./mvnw spring-boot:build-image
 
+#./mvnw jib:build
+#./mvnw jib:build -Dimage=balaztomas85/bookmarks-api
+#./mvnw jib:dockerBuild
+
 FROM eclipse-temurin:17-jre-focal
 
 MAINTAINER Tomas Balaz
