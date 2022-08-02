@@ -1,6 +1,9 @@
 # docker build -t balaztomas85/bookmarks-api .
 # docker run --name bookmark-api -p 8080:8080 balaztomas85/bookmarks-api
 
+#./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=balaztomas85/bookmarks-api
+#./mvnw spring-boot:build-image
+
 FROM eclipse-temurin:17-jre-focal
 
 MAINTAINER Tomas Balaz
