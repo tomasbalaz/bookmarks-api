@@ -5,15 +5,15 @@ name: Build
 
 on:
   push:
-    branches: [ "*" ]
+    branches: [ "**" ]
 
 jobs:
-  build-bookmarker-api:
+  build-bookmarks-api:
     name: Build bookmarks-api
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./bookmarks-api
+        working-directory: .
     steps:
       - uses: actions/checkout@v3
 
