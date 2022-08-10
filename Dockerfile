@@ -11,5 +11,5 @@
 FROM eclipse-temurin:17-jre-focal
 
 MAINTAINER Tomas Balaz
-COPY target/*.jar bookmark-api-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","/bookmark-api-0.0.1-SNAPSHOT.jar"]
+COPY target/*.jar bookmarks-api-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/bookmarks-api-0.0.1-SNAPSHOT.jar"]
