@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>sk.balaz</groupId>
-    <artifactId>bookmark-api</artifactId>
+    <artifactId>bookmarks-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>bookmark-api</name>
-    <description>bookmark-api</description>
+    <name>bookmarks-api</name>
+    <description>bookmarks-api</description>
     <properties>
         <java.version>17</java.version>
         <testcontainers.version>1.17.3</testcontainers.version>
