@@ -16,8 +16,6 @@ public class BookmarkService {
 
     private final BookmarkRepository bookmarkRepository;
 
-    private final BookmarkMapper bookmarkMapper;
-
     public BookmarksDTO getBookmarks(Integer page) {
         int pageNumber = page < 1 ? 0 : page - 1;
         Pageable pageable = PageRequest.of(pageNumber, 10, Sort.Direction.DESC, "createdAt");
@@ -31,7 +29,7 @@ public class BookmarkService {
         int pageNumber = page < 1 ? 0 : page - 1;
         Pageable pageable = PageRequest.of(pageNumber, 10, Sort.Direction.DESC, "createdAt");
 
-        Page<BookmarkDTO> bookmarkPage = bookmarkRepository.searchBookmarks(query, pageable);
+        Page<BookmarkDTO> bookmarkPage = bookmarkRepository.findBookmarkByTitleContainingIgnoreCase(query, pageable);
 
         return new BookmarksDTO(bookmarkPage);
     }
