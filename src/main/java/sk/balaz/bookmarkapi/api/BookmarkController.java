@@ -1,12 +1,14 @@
 package sk.balaz.bookmarkapi.api;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+import sk.balaz.bookmarkapi.domain.BookmarkDTO;
 import sk.balaz.bookmarkapi.domain.BookmarksDTO;
 import sk.balaz.bookmarkapi.domain.BookmarkService;
+import sk.balaz.bookmarkapi.domain.CreateBookmarkRequest;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/v1/bookmark")
@@ -33,5 +35,25 @@ public class BookmarkController {
             return bookmarkService.getBookmarks(page);
         }
         return bookmarkService.searchBookmarks(page, query);
+    }
+
+    // POST /api/v1/bookmark
+    // Request Payload :
+    //  {
+    //  "title" :  "Sivalabs Blog",
+    //  "url" :  "https://sivalabs.in"
+    //  }
+    // Response status code 201
+    // Response payload :
+    //  {
+    //  "id" : "1",
+    //  "title" : "Sivalabs Blog",
+    //  "url" : "https://sivalabs.in"
+    //  }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public BookmarkDTO createBookmark(@RequestBody @Valid CreateBookmarkRequest request) {
+        return bookmarkService.createBookmark(request);
     }
 }
